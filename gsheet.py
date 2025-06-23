@@ -14,7 +14,7 @@ scope = [
 ]
 
 service_account_info = json.loads(os.getenv("GOOGLE_CREDENTIALS"))
-creds = service_account.Credentials.from_service_account_info(service_account_info)
+creds = service_account.Credentials.from_service_account_info(service_account_info, scopes=scope)
 client = gspread.authorize(creds)
 sheet = client.open(SHEET_NAME).sheet1
 
