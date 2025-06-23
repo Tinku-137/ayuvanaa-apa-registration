@@ -9,12 +9,11 @@ load_dotenv()
 SHEET_NAME = "Ayuvanaa Registrations"
 
 scope = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive"
+    "https://www.googleapis.com/auth/spreadsheets"  # Removed drive scope
 ]
 
 service_account_info = json.loads(os.getenv("GOOGLE_CREDENTIALS"))
-creds = service_account.Credentials.from_service_account_info(service_account_info)
+creds = service_account.Credentials.from_service_account_info(service_account_info, scopes=scope)
 client = gspread.authorize(creds)
 sheet = client.open(SHEET_NAME).sheet1
 
