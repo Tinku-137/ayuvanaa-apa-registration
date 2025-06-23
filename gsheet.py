@@ -2,6 +2,9 @@ import gspread
 import json
 import os
 from google.oauth2 import service_account
+from dotenv import load_dotenv
+
+load_dotenv()
 
 SHEET_NAME = "Ayuvanaa Registrations"
 
