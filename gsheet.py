@@ -9,7 +9,8 @@ load_dotenv()
 SHEET_NAME = "Ayuvanaa Registrations"
 
 scope = [
-    "https://www.googleapis.com/auth/spreadsheets"  # Removed drive scope
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive"
 ]
 
 service_account_info = json.loads(os.getenv("GOOGLE_CREDENTIALS"))
